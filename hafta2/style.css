@@ -1,0 +1,44 @@
+
+body{
+	background-color:#44b1c7;
+}
+
+.baslik{
+	text-align:center;
+}
+
+
+#diskutu{
+            width:306px;
+            height:306px;
+            margin: auto;
+            border: 3px outset grey;
+
+            padding-left: 3px;
+            padding-top:3px;
+            background-color:yellow;
+            
+          }
+          #diskutu div{
+            width:100px;
+            height:100px;
+            float:left;
+            
+            padding-top: 1px;
+            padding-left: 1px;
+            
+          }
+          #diskutu span{
+            font-size:16px;
+            width:31px;
+            height:31px;
+            float:left;
+            display:block;
+          	border:1.1px solid grey;
+            text-align:center;  
+            line-height:33px;
+            background-color:white;   
+            padding: auto;
+            
+
+          }

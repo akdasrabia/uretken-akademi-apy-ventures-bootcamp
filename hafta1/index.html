@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+  <meta charset="UTF-8">
+  <title>Hesap Makinesi</title>
+  <style>
+  td {
+  border: 2px solid #a0a0a0;
+  text-align: left;
+  padding: 4px;
+  width: 80px;
+  height:50px;
+
+}
+tr {
+  border: 1px solid #a0a0a0;
+  text-align: left;
+  width:100%;
+  height:100;
+
+}
+
+input {
+  width: 87px;
+  height: 50px;
+  background-color: #a0a0a0;
+  border: 3px solid #000000;
+  font-family:verdana;
+  text-align:center;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+  </style>
+</head>
+<body>
+
+<canvas id="myCanvas" width="400" height="50" style="border:7px solid #000000; background-color: white;">
+</canvas>
+<br>
+<br>
+
+
+   <table style="border: 4px solid #a0a0a0;">
+  <tr>
+    <td colspan="3" ><input type="text" style="background-color: #ffffff; width: 275px; text-align:left;" id="sonuc" ></td>
+    <td><input type="button" value="C" onclick="clr()"/> </td>
+  </tr>
+  <tr>
+    <td><input type="button" value='1' onclick="yaz('1')"></td>
+    <td><input type="button" value='2' onclick="yaz('2')"></td>
+    <td><input type="button" value='3' onclick="yaz('3')"></td>
+    <td><input type="button" value='/' onclick="yaz('/')"></td>
+  </tr>
+   <tr>
+    <td><input type="button" value='4' onclick="yaz('4')"></td>
+    <td><input type="button" value='5' onclick="yaz('5')"></td>
+    <td><input type="button" value='6' onclick="yaz('6')"></td>
+    <td><input type="button" value='-' onclick="yaz('-')"></td>
+  </tr>
+   <tr>
+    <td><input type="button" value='7' onclick="yaz('7')"></td>
+    <td><input type="button" value='8' onclick="yaz('8')"></td>
+    <td><input type="button" value='9' onclick="yaz('9')"></td>
+    <td><input type="button" value='+' onclick="yaz('+')"></td>
+  </tr>
+<tr>
+    <td><input type="button" value='.' onclick="yaz('.')"></td>
+    <td><input type="button" value='0' onclick="yaz('0')"></td>
+    <td><input type="button" value='=' onclick="hesapla()"></td>
+    <td><input type="button" value='*' onclick="yaz('*')"></td>
+  </tr>
+
+</table>
+
+<script>
+
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+	ctx.font = "30px Verdana";
+	ctx.fillText("Hesap Makinesi", 80, 38);
+
+    function yaz(val)
+    {
+        document.getElementById("sonuc").value+=val
+    }
+      
+    //function that evaluates the digit and return result
+    function hesapla()
+    {
+        let x = document.getElementById("sonuc").value
+        let y = eval(x)
+        document.getElementById("sonuc").value = y
+    }
+      
+    //function that clear the display
+    function clr()
+    {
+        document.getElementById("sonuc").value = ""
+    }
+ </script>
+
+
+  
+</body>
+</html>
